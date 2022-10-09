@@ -1,3 +1,6 @@
+SheetPath=r''
+assert SheetPath,'Please provide the path to your sheet music root folder in the string on the line above (var SheetPath).'
+
 from genericpath import exists
 from os import chdir, mkdir
 from sys import argv
@@ -12,8 +15,6 @@ You can find these names in the end of the serie page  URL."""
 
 if len(argv)!=2:print(__doc__)
 else:
-    SheetPath=r''
-    assert SheetPath,'Please provide the path to your sheet music root folder in the string on the line above (var SheetPath).'
     chdir(SheetPath)
     url="https://www.ninsheetmusic.org/browse/series/"+argv[1]
     w=pq(url)
